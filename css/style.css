@@ -1,11 +1,6 @@
 @font-face {
     font-family: 'Helios';
-    src: url(/FONT/Helios\ Regular.ttf);
-}
-
-@font-face {
-    font-family: 'Cyberpunk';
-    src: url(/FONT/Cyberpunk-Regular.ttf);
+    src: url(../FONT/Helios\ Regular.ttf);
 }
 
 * {
