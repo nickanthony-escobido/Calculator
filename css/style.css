@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Helios';
+    src: url(/FONT/Helios\ Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Cyberpunk';
+    src: url(/FONT/Cyberpunk-Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: left;
+}
+
+body {
+    font-family: 'Helios';
+}
+
+a  {
+    text-decoration: none;
+    color:  #fff;
+}
+
+body {
+    background-image: linear-gradient(170deg, purple, limegreen);
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    color: #000;
+}
+
+#calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 50px;
+    border-radius: 10px;
+    background-image: linear-gradient(to left, black, grey);
+    box-shadow: 0 0 10px 10px white;
+}
+
+.display-screen {
+    background-color: #f967f3;
+    border-radius: 25px;
+}
+
+.display {
+    backdrop-filter:  blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    margin: 0 10px;
+    height: 70px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #0ef12d;
+    padding-right: 10px;
+}
+
+.button {
+    height: 60px;
+    width: 60px;
+    border: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    transform:  scale(1.15);
+}
+
+button#equal {
+    height: 130px;
+}
+
+.calculator {
+    background-color: #fff;
+}
+ #display {
+    color: #000000;
+}
+
+button#clear {
+    background-color: #ffd5d8;
+    color: #fc4552;
+}
+
+button.btn-number {
+    background-color: #c3eaff;
+    color: #000;
+}
+
+button.btn-operator {
+    background-color: #c420bb;
+    color: #e0bfdf;
+}
+
+button#equal {
+    background-color: #d4258b;
+    color: #000;
+}
+
+.error-field {
+    outline: none;
+    background-color: red;
+    border: 2px solid red;
+}

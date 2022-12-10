@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="buttone-one" onclick="fizzBuzz()">0</button>
+    <button id="buttone-two">Neutral</button>
+</body>
+<script>
+const buttonOne = document.getElementById("buttone-one");
+const buttonTwo = document.getElementById("buttone-two");
+
+const fizzBuzz = () => {
+    buttonOne.innerText = parseInt(buttonOne.innerText) + 1;
+
+    if(buttonOne.innerText % 5 == 0  && buttonOne.innerText % 3 ==0 ) {
+        buttonTwo.innerText = "FizzBuzz";
+        buttonTwo.style.backgroundColor = "violet"
+    } else if (buttonOne.innerText % 5 == 0) {
+        buttonTwo.innerText= "Buzz";
+        buttonTwo.style.backgroundColor = "blue";
+    } else if (buttonOne.innerText % 3 == 0) {
+        buttonTwo.innerText= "Fizz";
+        buttonTwo.style.backgroundColor = "red";
+    } else {
+        buttonTwo.innerText = "Neutral";
+        buttonTwo.style.backgroundColor = "";
+    }
+};
+</script>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation Basic</title>
+  </head>
+
+  <style>
+    .input-group {
+      margin-bottom: 10px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .error {
+        color: red;
+        display: none;
+    }
+
+    .error-field {
+        outline: none;
+        border: 2px solid red;
+    }
+  </style>
+  <body>
+    <main>
+      <form action="#">
+        <!-- 1st row -->
+        <div>
+          <div class="input-group">
+            <label for="firstname">First Name :</label>
+            <input
+              type="text"
+              id="firstname"
+              placeholder="Enter your First Name"
+            />
+            <span class="error" id="error-span">This field is required</span>
+          </div>
+          <div class="input-group">
+            <label for="lastname">Last Name :</label>
+            <input
+              type="text"
+              id="lastname"
+              placeholder="Enter your Last Name"
+            />
+            <span class="error" id="error-span-2">This field is required</span>
+
+            <!-- end of 1st row -->
+          </div>
+        </div>
+        <!-- 2nd row -->
+        <div>
+          <div class="input-group">
+            <label for="email">Email Address :</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your Email Address"
+            />
+            <span class="error" id="error-span-3">This field is required</span>
+          </div>
+          <!-- end row -->
+        </div>
+
+        <!-- 3rd row-->
+        <div>
+          <div class="input-group">
+            <label for="number">Age :</label>
+            <input type="number" id="number" placeholder="Enter your Age" />
+          </div>
+
+          <div class="input-group">
+            <label for="date">Date of Birth :</label>
+            <input type="date" id="date" />
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password :</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="file">Upload a file :</label>
+            <input type="file" id="file" />
+          </div>
+          <!-- end of 3rd row -->
+        </div>
+
+        <!-- 4th row -->
+        <div>
+          <div class="input-group">
+            <label for="address">Address :</label>
+            <textarea
+              id="address"
+              cols="30"
+              rows="10"
+              style="resize: none"
+            ></textarea>
+          </div>
+
+          <div class="input-group">
+            <input type="radio" id="male" name="gender" />
+            <label for="gender">Male</label>
+          </div>
+
+          <div class="input-group">
+            <input type="radio" id="female" name="gender" />
+            <label for="gender">Female</label>
+          </div>
+
+          <div class="input-group">
+            <input type="radio" id="gay" name="gender" />
+            <label for="gender">Gay</label>
+          </div>
+
+          <div class="input-group">
+            <input type="radio" id="lesbian" name="gender" />
+            <label for="gender">Lesbian</label>
+          </div>
+          <!-- end of 4th row -->
+        </div>
+
+        <!-- 5th row -->
+        <div>
+          <!-- checkbox -->
+          <div>
+            <div>
+              <input type="checkbox" id="html" />
+              <label for="html">HTML</label>
+            </div>
+            <div>
+              <input type="checkbox" id="css" />
+              <label for="css">CSS</label>
+            </div>
+            <div>
+              <input type="checkbox" id="javascript" />
+              <label for="javascript">JAVASCRIPT</label>
+            </div>
+            <div>
+              <input type="checkbox" id="bootstrap" />
+              <label for="bootstrap">BOOTSTRAP</label>
+            </div>
+            <div>
+              <input type="checkbox" id="git" />
+              <label for="git">GIT</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="country">Choose a country :</label>
+            <select id="country">
+              <option>Philippines</option>
+              <option>USA</option>
+              <option>Singapore</option>
+              <option>Japan</option>
+            </select>
+          </div>
+          <!-- end of 5th row -->
+        </div>
+
+        <button id="submitButton" type="submit" onclick="handleSubmit()">Submit</button>
+      </form>
+    </main>
+  </body>
+  
+  <script>
+    const firstname = document.getElementById("firstname");
+    const lastname = document.getElementById("lastname");
+    const email = document.getElementById("email");
+    const submitButton = document.getElementById("submitButton");
+    const errorSpan = document.getElementById("error-span");
+    const errorSpan2 = document.getElementById("error-span-2");
+    const errorSpan3 = document.getElementById("error-span-3");
+    
+    // const handleSubmit = (e) => {
+    //     if(!firstname.value) {
+    //         alert("please enter valid firstname");
+    //     } else if (!lastname.value) {
+    //         alert("Please enter valid lastname");
+    //     } else if (!email.value) {
+    //         alert("Please enter valid email address");
+    //     } else {
+    //         alert("Submit form success");
+    //     }
+    // };
+
+    const handleSubmit = (e) => {
+        if(!firstname.value) {
+            errorSpan.style.display = "inline-block";
+            firstname.classList.add("error-field");
+        } else if (!lastname.value) {
+            errorSpan2.style.display = "inline-block";
+            lastname.classList.add("error-field");
+        } else if (!email.value) {
+            errorSpan3.style.display = "inline-block";
+            email.classList.add("error-field");
+        } else {
+            errorSpan.style.display = "none";
+            errorSpan2.style.display = "none";
+            errorSpan3.style.display = "none";
+            firstname.classList.remove("error-field");
+            lastname.classList.remove("error-field");
+            email.classList.remove("error-field");
+            alert("Submit form success");
+        }
+    };
+
+    // const handleSubmit =  (e) => {
+    //     if(!firstname.value || !lastname.value || !email.value) {
+    //         errorSpan.style.display = "inline-block";
+    //         errorSpan2.style.display = "inline-block";
+    //         errorSpan3.style.display = "inline-block";
+    //     }
+    // } 
+
+    // const handleSubmit =  (e) => {
+    //     if(!firstname.value) {
+    //         errorSpan.style.display = "inline-block";
+    //     } else if(!lastname.value) {
+    //         errorSpan2.style.display = "inline-block";
+    //     } else if(!email.value) {
+    //         errorSpan3.style.display = "inline-block";
+    //     } else {
+    //         alert("Submit form success");
+    //     }
+    // } 
+  </script>
+</html>
