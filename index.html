@@ -25,38 +25,42 @@
             <table>
               <tr>
                 <td><button id="clear" class="button btn-clear">C</button></td>
-                <td><button class="button btn-operator">/</button></td>
-                <td><button class="button btn-operator">*</button></td>
+                <td><button class="button btn-operator" onclick="audio.play();">/</button></td>
+                <td><button class="button btn-operator" onclick="audio.play();">*</button></td>
                 <td><button class="button btn-operator">&larr;</button></td>
               </tr>
               <tr>
-                <td><button class="button btn-number">7</button></td>
-                <td><button class="button btn-number">8</button></td>
-                <td><button class="button btn-number">9</button></td>
-                <td><button class="button btn-operator">-</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">7</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">8</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">9</button></td>
+                <td><button class="button btn-operator" onclick="audio.play();">-</button></td>
               </tr>
               <tr>
-                <td><button class="button btn-number">4</button></td>
-                <td><button class="button btn-number">5</button></td>
-                <td><button class="button btn-number">6</button></td>
-                <td><button class="button btn-operator">+</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">4</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">5</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">6</button></td>
+                <td><button class="button btn-operator" onclick="audio.play();">+</button></td>
               </tr>
               <tr>
-                <td><button class="button btn-number">1</button></td>
-                <td><button class="button btn-number">2</button></td>
-                <td><button class="button btn-number">3</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">1</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">2</button></td>
+                <td><button class="button btn-number" onclick="audio.play();">3</button></td>
                 <td rowspan="2"><button id="equal" class="button">&equals;</button></td>
               </tr>
               <tr>
-                <td><button class="button btn-operator">(</button></td>
-                <td><button class="button btn-number">0</button></td>
-                <td><button class="button btn-operator">)</button></td>
+                <td><button class="button btn-operator"     onclick="audio.play();">(</button></td>
+                <td><button class="button btn-number"     onclick="audio.play();">0</button></td>
+                <td><button class="button btn-operator"     onclick="audio.play();">)</button></td>
               </tr>
             </table>
           </div>
         </div>
     </div>
     </section>
+<script>
+var audio = new Audio();
+audio.src = "sounds/sounds.wav";
+</script>
     <script src="js/script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
